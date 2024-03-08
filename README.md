@@ -12,4 +12,4 @@ python3 get-chapter-info.py <動画ファイルpath>
 ## 前提条件
 
 - python3がインストールされていること
-- ffmpegがインストールされていること
+- ffmpegがインストールされていること(pathを通すかget-chapter-info.pyと同じフォルダに置く)
