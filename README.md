@@ -3,7 +3,6 @@
 動画に埋め込まれたチャプター情報を
 Youtube概要欄へ記載できる形に変換するscriptです
 
-
 ## 前提条件
 
 - python3がインストールされていること
@@ -11,6 +10,36 @@ Youtube概要欄へ記載できる形に変換するscriptです
 - DaVinciResolveのDeliverページでチャプターを出力した動画であること
   - DaVinciResolveでなくても、チャプターがmetadataに含まれていれば良いはずですが未確認です
 
+----
+
+## 環境セットアップ
+
+### 共通
+
+1. get-chapter-info.pyのDL
+[ここ](https://github.com/mug-lab-3/get-chapter-info/blob/main/get-chapter-info.py)のページからDLする
+
+----
+
+### Windows
+
+#### python3
+
+1. [python公式サイト](https://www.python.org/downloads)からDL
+2. DLしたインストーラを起動してインストール
+
+#### ffmpeg
+
+1. [ffmpegバイナリ配布サイト](https://www.gyan.dev/ffmpeg/builds/)ここからffmpeg-git-essentials.7z書かれてるところをクリックしてDL
+2. DLしたものを展開し、binフォルダに有る`ffmpeg.exe`を`get-chapter-info.py`と同じフォルダに置く
+
+----
+
+### Mac/Linux
+
+それぞれのOSのパッケージマネージャーからffmpeg, pytyon3をインストール
+
+----
 
 ## 使い方
 
@@ -31,22 +60,7 @@ python3 get-chapter-info.py <動画ファイルpath>
 ```
 
 
-## Windowsでの環境セットアップ方法
 
-### python3
-
-1. [python公式サイト](https://www.python.org/downloads)からDL
-2. DLしたインストーラを起動してインストール
-
-### ffmpeg
-
-1. [ffmpegバイナリ配布サイト](https://www.gyan.dev/ffmpeg/builds/)ここからffmpeg-git-essentials.7z書かれてるところをクリックしてDL
-2. DLしたものを展開し、binフォルダに有る`ffmpeg.exe`を`get-chapter-info.py`と同じフォルダに置く
-
-
-## Mac/Linuxでの環境セットアップ方法
-
-それぞれのOSのパッケージマネージャーからffmpeg, pytyon3をインストール
 
 
 
