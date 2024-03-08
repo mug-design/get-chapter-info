@@ -9,7 +9,7 @@ import datetime
 def main(file_name):
     ret = subprocess.run(["ffmpeg", "-i", file_name, "-f", "ffmetadata", "-"],
                          capture_output=True,
-                         text=True)
+                         text=True, encoding='utf-8')
     if ret.returncode != 0:
         print("Error !!!!!")
         print("-------------------------")
@@ -19,7 +19,7 @@ def main(file_name):
 
     chapter_info = "[META]"
     chapter_cnt = 1
-    for line in ret.stdout.split(os.linesep):
+    for line in ret.stdout.split("\n"):
         if line == "[CHAPTER]":
             line = f"[CHAPTER{chapter_cnt}]"
             chapter_cnt += 1
