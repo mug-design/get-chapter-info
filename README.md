@@ -18,6 +18,7 @@ Youtube概要欄へ記載できる形に変換するscriptです
 
 1. get-chapter-info.pyのDL
 [ここ](https://github.com/mug-lab-3/get-chapter-info/blob/main/get-chapter-info.py)のページからDLする
+![DLボタン](images/dl-button.png)
 
 ----
 
