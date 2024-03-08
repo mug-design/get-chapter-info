@@ -35,13 +35,20 @@ python3 get-chapter-info.py <動画ファイルpath>
 
 ### python3
 
-1. https://www.python.org/downloads/からDL
+1. [python公式サイト](https://www.python.org/downloads)からDL
 2. DLしたインストーラを起動してインストール
 
 ### ffmpeg
 
-1. ここからffmpeg-git-essentials.7z書かれてるところをクリックしてDL
-  https://www.gyan.dev/ffmpeg/builds/
-2. DLしたものを展開してget-chapter-info.pyと同じフォルダに置く
+1. [ffmpegバイナリ配布サイト](https://www.gyan.dev/ffmpeg/builds/)ここからffmpeg-git-essentials.7z書かれてるところをクリックしてDL
+2. DLしたものを展開し、binフォルダに有る`ffmpeg.exe`を`get-chapter-info.py`と同じフォルダに置く
+
+
+## Mac/Linuxでの環境セットアップ方法
+
+それぞれのOSのパッケージマネージャーからffmpeg, pytyon3をインストール
+
+
+
 
 
