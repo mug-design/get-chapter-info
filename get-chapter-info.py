@@ -26,6 +26,7 @@ def main(file_name):
             chapter_cnt += 1
         chapter_info += line + os.linesep
 
+    time_base = 1 / 1000
     time_info = []
     need_hour = False
     config = configparser.ConfigParser()
@@ -41,10 +42,6 @@ def main(file_name):
             if not "title" in config[section]:
                 print(f"{section}: title key not found")
                 continue
-            if config[section]["timebase"] != "1/1000":
-                print(
-                    f"{section}: timebase({config[section]['timebase']}) is not supported")
-                continue
             if not config[section]["start"].isdecimal():
                 print(
                     f"{section}: invalid start time {config[section]['start']}")
@@ -56,8 +53,10 @@ def main(file_name):
                 need_hour = True
 
     for item in time_info:
+        time_base = eval(config[section]['timebase'])
+        time = int(item["time_stamp_ms"]) * time_base * 1000
         date = datetime.datetime(
-            2000, 1, 1) + datetime.timedelta(milliseconds=item["time_stamp_ms"])
+            2000, 1, 1) + datetime.timedelta(milliseconds=time)
         if need_hour:
             print(f'{date.strftime("%H:%M:%S")} {item["title"]}')
         else:
