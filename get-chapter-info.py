@@ -46,10 +46,11 @@ def main(file_name):
                 print(
                     f"{section}: invalid start time {config[section]['start']}")
                 continue
-            start_time_ms = int(config[section]["start"])
-            time_info.append({"time_stamp_ms": start_time_ms,
+            time_base = eval(config[section]['timebase'])
+            start_time = int(config[section]["start"])
+            time_info.append({"time_stamp_ms": start_time,
                              "title": config[section]["title"]})
-            if 1000 * 60 * 60 < start_time_ms:
+            if (60 * 60) < (start_time * time_base):
                 need_hour = True
 
     for item in time_info:
